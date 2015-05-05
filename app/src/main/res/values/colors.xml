@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#9b9b9b</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#BF844A</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="loopee_login_form_color">#3754A2</color>
+    <color name="loopee_login_button">#125E8A</color>
+    <color name="loopee_login_button_push">#104b6d</color>
+    <color name="loopee_login_button_focus">#18314F</color>
+    <color name="loopee_login_help_button_label">#E0E0E0</color>
+    <color name="loopee_login_help_button_label_push">#AAAAAA</color>
+    <color name="loopee_login_help_button_label_focus">#CCCCCC</color>
+    <color name="loopee_login_text_hint">#AAAAAA</color>
+    <color name="loopee_login_display_text">@android:color/white</color>
+</resources>

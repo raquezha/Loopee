@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name"> Jan </string>
+
+    <string name="loopee_app_name">Loopee</string>
+    <string name="loopee_login"> Login </string>
+    <string name="loopee_login_account_id"> Account ID </string>
+    <string name="loopee_login_email"> Email</string>
+    <string name="loopee_login_password"> Password </string>
+    <string name="loopee_login_button_tryitnow"> Password </string>
+
+    <string name="loopee_begin_profile">Profile  </string>
+    <string name="loopee_begin_user"> User: </string>
+    <string name="loopee_begin_branch"> Branch: </string>
+    <string name="loopee_begin_store"> Store: </string>
+    <string name="loopee_begin_country"> Country: </string>
+    <string name="loopee_begin_products"> Products: </string>
+
+    <string name="loopee_begin_invoices">Invoices  </string>
+    <string name="loopee_begin_submitted"> Submitted: </string>
+    <string name="loopee_begin_unsubmitted"> Unsubmitted: </string>
+
+    <string name="loopee_begin_button"> Begin </string>
+
+    <string name="title_activity_loopee_products">LoopeeProducts</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_select_product_dialog">SelectProductDialog</string>
+    <string name="title_activity_sample">Sample</string>
+
+    <string name="prompt_accountid">Account Id</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="invalid_email">This email address is invalid</string>
+    <string name="invalid_password">The length of Password should be at least 5 characters</string>
+    <string name="field_required">This field is required</string>
+
+</resources>

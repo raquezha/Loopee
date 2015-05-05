@@ -1,0 +1,71 @@
+
+<view xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rippleview"
+    class="com.andexert.library.RippleView"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:background="#656565"
+    android:clickable="true"
+    android:orientation="horizontal"
+    app:rv_centered="true">
+
+    <!-- Empty layout (0x0 dp) centered horizontally -->
+    <Space android:id="@+id/dummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/lp_image_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_picture"
+        android:contentDescription="productThumbnail"
+        android:clickable="false"
+        android:minHeight="100dp"
+        android:minWidth="100dp" />
+
+    <TextView
+        android:id="@+id/lp_text_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/lp_image_product"
+        android:layout_toRightOf="@+id/lp_image_product"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:textSize="20sp"
+        android:text="Loopee ProductX" />
+
+    <TextView
+        android:id="@+id/lp_text_product_cost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/lp_image_product"
+        android:layout_toRightOf="@+id/lp_image_product"
+        android:textSize="18sp"
+        android:text="P 50" />
+
+    <TextView
+        android:id="@+id/lp_text_product_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="35sp"
+        android:text="0" />
+
+</view>

@@ -1,0 +1,348 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3754A2"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_loopee_app_logo" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/begin_Profile_text"
+                android:text="@string/loopee_begin_profile"
+                android:layout_gravity="center"
+                android:textColor="#BF844A"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="right" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#BF844A"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="right" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/loopee_begin_user"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:text="@string/loopee_begin_user"
+                android:textColor="#BF844A"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/loopee_begin_user_input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/loopee_begin_user"
+                android:gravity="left"
+                android:text="Test User"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/loopee_begin_store"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:text="@string/loopee_begin_store"
+                android:textColor="#BF844A"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/loopee_begin_store_input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/loopee_begin_store"
+                android:gravity="left"
+                android:text="Test User"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_branch"
+                android:text="@string/loopee_begin_branch"
+                android:textColor="#BF844A"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_branch_input"
+                android:text="Test User"
+                android:layout_toRightOf="@+id/loopee_begin_branch"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_country"
+                android:text="@string/loopee_begin_country"
+                android:textColor="#BF844A"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_country_input"
+                android:text="Test User"
+                android:layout_toRightOf="@+id/loopee_begin_country"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="fill_horizontal"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_products"
+                android:text="@string/loopee_begin_products"
+                android:textColor="#BF844A"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_products_input"
+                android:text="Test User"
+                android:layout_toRightOf="@+id/loopee_begin_products"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_invoices"
+                android:text="@string/loopee_begin_invoices"
+                android:layout_gravity="center"
+                android:textColor="#BF844A"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="right" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#BF844A"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="right" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_submitted"
+                android:text="@string/loopee_begin_submitted"
+                android:textColor="#BF844A"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_submitted_input"
+                android:text="Test User"
+                android:layout_toRightOf="@+id/loopee_begin_submitted"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_unsubmitted"
+                android:text="@string/loopee_begin_unsubmitted"
+                android:textColor="#BF844A"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loopee_begin_invoices_unsubmitted"
+                android:text="Test User"
+                android:layout_toRightOf="@+id/loopee_begin_unsubmitted"
+                android:textColor="#ffffff"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_gravity="center"
+                android:gravity="left|right"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/begin_button"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:background="#ffffff"
+            android:text="BEGIN"
+            android:textColor="#BF844A"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/unlink_button"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#BF844A"
+            android:text="UNLINK DEVICE"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</LinearLayout>

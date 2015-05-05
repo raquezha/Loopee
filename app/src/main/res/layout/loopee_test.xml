@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#353535">
+
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/loopee_account_id"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:background="#ffffffff"
+
+        android:layout_alignBottom="@+id/loopee_button_get_url"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/loopee_email"
+        android:background="#3f3f3f"
+        android:layout_below="@+id/loopee_account_id"
+        android:layout_alignLeft="@+id/loopee_account_id"
+        android:layout_alignStart="@+id/loopee_account_id" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/loopee_password"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:background="#ffffffff"
+        android:layout_below="@+id/loopee_email"
+        android:layout_alignLeft="@+id/loopee_email"
+        android:layout_alignStart="@+id/loopee_email" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get URL"
+        android:id="@+id/loopee_button_get_url"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Token"
+        android:id="@+id/loopee_button_get_token"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/loopee_account_id"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/url"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:background="#3f3f3f"
+        android:layout_below="@+id/loopee_password"
+        android:layout_alignLeft="@+id/loopee_password"
+        android:layout_alignStart="@+id/loopee_password" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/token"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:background="#ffffffff"
+        android:layout_below="@+id/url"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/branches_count"
+        android:layout_gravity="center_horizontal"
+        android:inputType="text"
+        android:background="#3f3f3f"
+        android:layout_below="@+id/token"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Products"
+        android:id="@+id/loopee_button_products"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Products"
+        android:id="@+id/loopee_button_get_products"
+        android:layout_below="@+id/loopee_button_get_users"
+        android:layout_alignRight="@+id/loopee_button_get_branches"
+        android:layout_alignEnd="@+id/loopee_button_get_branches" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Settings"
+        android:id="@+id/loopee_button_get_settings"
+        android:layout_below="@+id/loopee_button_get_token"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Branches"
+        android:id="@+id/loopee_button_get_branches"
+        android:layout_below="@+id/loopee_button_get_settings"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Tax Settings"
+        android:id="@+id/loopee_button_get_tax_settings"
+        android:layout_below="@+id/loopee_button_get_branches"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get User"
+        android:id="@+id/loopee_button_get_users"
+        android:layout_below="@+id/loopee_button_get_tax_settings"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Customers"
+        android:id="@+id/loopee_button_get_customers"
+        android:layout_below="@+id/loopee_button_get_products"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unlink Device"
+        android:id="@+id/loopee_button_unlink_device"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/branches_count"
+        android:layout_alignEnd="@+id/branches_count"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/loopee_button_login"
+        android:layout_above="@+id/loopee_button_unlink_device"
+        android:layout_alignLeft="@+id/loopee_button_unlink_device"
+        android:layout_alignStart="@+id/loopee_button_unlink_device" />
+
+</RelativeLayout>

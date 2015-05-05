@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.nueca.jn.loopee.activities" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="net.nueca.jn.loopee.controllers.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/loopee_ic_launcher"
+        android:label="@string/loopee_app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="net.nueca.jn.loopee.activities.DashboardActivity"
+            android:label="@string/loopee_app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.nueca.jn.loopee.activities.LoginActivity"
+            android:label="Login" >
+        </activity>
+        <activity
+            android:name="net.nueca.jn.loopee.activities.LoopeeTest"
+            android:label="Loopee" >
+        </activity>
+        <activity
+            android:name="net.nueca.jn.loopee.activities.LoopeeProducts"
+            android:label="Products" >
+        </activity>
+        <activity
+            android:name="net.nueca.jn.loopee.activities.SelectProductDialog"
+            android:label="@string/title_activity_select_product_dialog"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+    </application>
+
+</manifest>
