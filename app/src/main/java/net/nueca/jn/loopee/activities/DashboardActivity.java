@@ -64,11 +64,14 @@ public class DashboardActivity extends Activity implements View.OnClickListener{
             for(int i=0; i<product.size(); i++){
                 productObj = product.get(i);
 
+
+                Log.i("product", String.valueOf(productObj.getProduct_tax_rates().size()));
+
                 if(productObj != null) {
                     for(int x=0; x<productObj.getProduct_tax_rates().size(); x++) {
 
                         productObj.getProduct_tax_rates().iterator();
-                        Log.i("product", productObj.toString());
+                        //Log.i("product", productObj.toString());
                     }
                 }
                 else
