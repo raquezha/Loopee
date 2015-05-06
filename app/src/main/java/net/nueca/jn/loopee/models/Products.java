@@ -6,69 +6,77 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Products")
 public class Products {
 
-    public final static String PRODUCT_ID_FIELD_NAME = "product_id";
-    public final static String PRODUCT_NAME_FIELD_NAME = "product_id";
-    public final static String PRODUCT_STOCK_NO_FIELD_NAME = "product_id";
-    public final static String PRODUCT_COST_FIELD_NAME = "product_id";
-    public final static String PRODUCT_RETAIL_PRICE_FIELD_NAME = "product_id";
-    public final static String PRODUCT_WHOLESALE_PRICE_FIELD_NAME = "product_id";
-    public final static String PRODUCT_DESCRIPTION_FIELD_NAME = "product_id";
-    public final static String PRODUCT_DISABLE_DISCOUNT_FIELD_NAME = "product_id";
-    public final static String PRODUCT_DISABLE_INVENTORY_FIELD_NAME = "product_id";
-    public final static String PRODUCT_ENABLE_FIELD_NAME = "product_id";
+    public final static String PRODUCT_ID_FIELD_NAME = "id";
+    public final static String PRODUCT_NAME_FIELD_NAME = "name";
+    public final static String PRODUCT_STOCK_NO_FIELD_NAME = "stock_no";
+    public final static String PRODUCT_COST_FIELD_NAME = "cost";
+    public final static String PRODUCT_RETAIL_PRICE_FIELD_NAME = "retail_price";
+    public final static String PRODUCT_WHOLESALE_PRICE_FIELD_NAME = "wholesale_price";
+    public final static String PRODUCT_DESCRIPTION_FIELD_NAME = "product_description";
+    public final static String PRODUCT_ALLOW_DECIMAL_QUANTITIES_FIELD_NAME = "allow_decimal_quantities";
+    public final static String PRODUCT_DISABLE_DISCOUNT_FIELD_NAME = "disable_discount";
+    public final static String PRODUCT_DISABLE_INVENTORY_FIELD_NAME = "inventory";
+    public final static String PRODUCT_ENABLE_FIELD_NAME = "enable";
+    public final static String PRODUCT_TAX_EXCEMPT_FIELD_NAME = "tax_excempt";
+    public final static String PRODUCT_TAG_LIST_FIELD_NAME = "tag_list";
+    public final static String PRODUCT_BARCODE_LIST_FIELD_NAME = "barcode_list";
+    public final static String PRODUCT_THUMBNAIL_URL_FIELD_NAME = "thumbnail_url";
+    public final static String PRODUCT_UTC_CREATED_AT_FIELD_NAME = "utc_created_at";
+    public final static String PRODUCT_UTC_UPDATED_AT_FIELD_NAME = "utc_updated_at";
+    public final static String PRODUCT_STATUS_FIELD_NAME = "status";
 
-    @DatabaseField(id = true)
+    @DatabaseField(id = true, columnName = PRODUCT_ID_FIELD_NAME)
     int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_NAME_FIELD_NAME)
     String name;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_STOCK_NO_FIELD_NAME)
     String stock_no;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_COST_FIELD_NAME)
     double cost;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_RETAIL_PRICE_FIELD_NAME)
     double retail_price;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_WHOLESALE_PRICE_FIELD_NAME)
     double wholesale_price;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_DESCRIPTION_FIELD_NAME)
     String description;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_ALLOW_DECIMAL_QUANTITIES_FIELD_NAME)
     Boolean allow_decimal_quantities;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_DISABLE_DISCOUNT_FIELD_NAME)
     Boolean disable_discount;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_DISABLE_INVENTORY_FIELD_NAME)
     Boolean disable_inventory;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_ENABLE_FIELD_NAME)
     Boolean enable_open_price;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_TAX_EXCEMPT_FIELD_NAME)
     Boolean tax_exempt;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_TAG_LIST_FIELD_NAME)
     String tag_list;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_BARCODE_LIST_FIELD_NAME)
     String barcode_list;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_THUMBNAIL_URL_FIELD_NAME)
     String thumbnail_url;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_UTC_CREATED_AT_FIELD_NAME)
     String utc_created_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_UTC_UPDATED_AT_FIELD_NAME)
     String utc_updated_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = PRODUCT_STATUS_FIELD_NAME)
     String status;
 
     public Products() {

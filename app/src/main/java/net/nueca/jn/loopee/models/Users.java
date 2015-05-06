@@ -6,8 +6,40 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Users")
 public class Users {
 
-    @DatabaseField(id = true)
+    public final static String USERS_ID_FIELD_NAME = "id";
+    public final static String USERS_EMAIL_FIELD_NAME = "email";
+    public final static String USERS_NAME_FIELD_NAME = "name";
+    public final static String USERS_HOME_BRANCH_FIELD_NAME = "home_branch";
+    public final static String USERS_ROLE_CODE_FIELD_NAME = "role_code";
+    public final static String USERS_UTC_CREATED_AT_FIELD_NAME = "utc_created_at";
+    public final static String USERS_UTC_UPDATED_AT_FIELD_NAME = "utc_updated_at";
+    public final static String USERS_STATUS_FIELD_NAME = "status";
+
+    @DatabaseField(id = true, columnName = USERS_ID_FIELD_NAME)
     int id;
+
+    @DatabaseField(columnName = USERS_EMAIL_FIELD_NAME)
+    String email;
+
+    @DatabaseField(columnName = USERS_NAME_FIELD_NAME)
+    String name;
+
+    @DatabaseField(columnName = USERS_HOME_BRANCH_FIELD_NAME)
+    int home_branch_id;
+
+    @DatabaseField(columnName = USERS_ROLE_CODE_FIELD_NAME)
+    String role_code;
+
+    @DatabaseField(columnName = USERS_UTC_CREATED_AT_FIELD_NAME)
+    String utc_created_at;
+
+    @DatabaseField(columnName = USERS_UTC_UPDATED_AT_FIELD_NAME)
+    String utc_updated_at;
+
+    @DatabaseField(columnName = USERS_STATUS_FIELD_NAME)
+    String status;
+
+    public Users(){ }
 
     public Users(String email, int id, String name, int home_branch_id, String role_code, String utc_created_at, String utc_updated_at, String status) {
         this.email = email;
@@ -19,32 +51,6 @@ public class Users {
         this.utc_updated_at = utc_updated_at;
         this.status = status;
     }
-
-    @DatabaseField
-    String email;
-
-    @DatabaseField
-    String name;
-
-    @DatabaseField
-    int home_branch_id;
-
-
-    @DatabaseField
-    String role_code;
-
-    @DatabaseField
-    String utc_created_at;
-
-    @DatabaseField
-    String utc_updated_at;
-
-    @DatabaseField
-    String status;
-
-    public Users(){ }
-
-
 
     @Override
     public String toString() {

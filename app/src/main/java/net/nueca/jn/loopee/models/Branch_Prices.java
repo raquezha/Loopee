@@ -7,12 +7,12 @@ import java.util.Date;
 
 @DatabaseTable(tableName = "BranchPrices")
 public class Branch_Prices {
-    public final static String BRANCH_PRICE_ID_FIELD_NAME = "branch_prices_id";
-    public final static String BRANCH_PRICE_RETAIL_PRICE_FIELD_NAME = "branch_prices_retail_price";
-    public final static String BRANCH_PRICE_WHOLESALE_PRICE_FIELD_NAME = "branch_prices_wholesale_price";
-    public final static String BRANCH_PRICE_UTC_CREATED_AT_FIELD_NAME = "branch_prices_utc_created_at";
-    public final static String BRANCH_PRICE_UTC_UPDATED_AT_FIELD_NAME = "branch_prices_utc_updated_at";
-    public final static String BRANCH_PRICE_STATUS_AT_FIELD_NAME = "branch_prices_status";
+    public final static String BRANCH_PRICE_ID_FIELD_NAME = "id";
+    public final static String BRANCH_PRICE_RETAIL_PRICE_FIELD_NAME = "retail_price";
+    public final static String BRANCH_PRICE_WHOLESALE_PRICE_FIELD_NAME = "wholesale_price";
+    public final static String BRANCH_PRICE_UTC_CREATED_AT_FIELD_NAME = "utc_created_at";
+    public final static String BRANCH_PRICE_UTC_UPDATED_AT_FIELD_NAME = "utc_updated_at";
+    public final static String BRANCH_PRICE_STATUS_AT_FIELD_NAME = "status";
 
     @DatabaseField(id = true, columnName = BRANCH_PRICE_ID_FIELD_NAME)
     int branch_id;

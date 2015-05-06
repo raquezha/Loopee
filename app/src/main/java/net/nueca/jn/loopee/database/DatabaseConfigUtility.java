@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class DatabaseConfigUtility extends OrmLiteConfigUtil{
 
-    private static final Class<?>[] classes = new Class[]{Session.class, Settings.class, Branches.class, Tax_Settings.class, Tax_Rates.class, Users.class, Products.class, Product_Tax_Rates.class, Customers.class};
+    private static final Class<?>[] classes = new Class[]{Session.class, Settings.class, Branches.class, Tax_Settings.class, Tax_Rates.class, Users.class, Products.class, Customers.class, Product_Tax_Rates.class};
 
     public static void main(String[] args) throws IOException, SQLException {
         writeConfigFile("ormlite_config.txt", classes);

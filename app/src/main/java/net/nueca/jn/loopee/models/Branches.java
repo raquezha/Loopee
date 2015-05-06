@@ -6,19 +6,19 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Branch")
 public class Branches {
 
-    public final static String BRANCH_ID_FIELD_NAME = "branch_id";
-    public final static String BRANCH_NAME_FIELD_NAME = "branch_name";
-    public final static String BRANCH_STREET_FIELD_NAME = "branch_street";
-    public final static String BRANCH_CITY_FIELD_NAME = "branch_city";
-    public final static String BRANCH_STATE_FIELD_NAME = "branch_state";
-    public final static String BRANCH_COUNTRY_FIELD_NAME = "branch_country";
-    public final static String BRANCH_ZIP_FIELD_NAME = "branch_zip";
-    public final static String BRANCH_TIN_FIELD_NAME = "branch_tin";
-    public final static String BRANCH_SITE_TYPE_FIELD_NAME = "branch_site_type";
-    public final static String BRANCH_SUBSCRIPTION_TYPE_FIELD_NAME = "branch_subscription_type";
-    public final static String BRANCH_UTC_CREATED_AT_FIELD_NAME = "branch_created_at";
-    public final static String BRANCH_UTC_UPDATED_AT_FIELD_NAME = "branch_updated_at";
-    public final static String BRANCH_STATUS_TYPE_FIELD_NAME = "branch_status";
+    public final static String BRANCH_ID_FIELD_NAME = "id";
+    public final static String BRANCH_NAME_FIELD_NAME = "name";
+    public final static String BRANCH_STREET_FIELD_NAME = "street";
+    public final static String BRANCH_CITY_FIELD_NAME = "city";
+    public final static String BRANCH_STATE_FIELD_NAME = "state";
+    public final static String BRANCH_COUNTRY_FIELD_NAME = "country";
+    public final static String BRANCH_ZIP_FIELD_NAME = "zip";
+    public final static String BRANCH_TIN_FIELD_NAME = "tin";
+    public final static String BRANCH_SITE_TYPE_FIELD_NAME = "site_type";
+    public final static String BRANCH_SUBSCRIPTION_TYPE_FIELD_NAME = "subscription_type";
+    public final static String BRANCH_UTC_CREATED_AT_FIELD_NAME = "created_at";
+    public final static String BRANCH_UTC_UPDATED_AT_FIELD_NAME = "updated_at";
+    public final static String BRANCH_STATUS_TYPE_FIELD_NAME = "status";
 
     @DatabaseField(id = true, columnName = BRANCH_ID_FIELD_NAME)
     int id;

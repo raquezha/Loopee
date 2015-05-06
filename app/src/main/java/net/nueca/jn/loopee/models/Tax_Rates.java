@@ -6,24 +6,29 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Tax_Rates")
 public class Tax_Rates {
 
-    public final static String TAX_RATE_FIELD_NAME = "tax_rate_id";
+    public final static String TAX_RATE_ID_FIELD_NAME = "id";
+    public final static String TAX_RATE_BRANCH_ID_FIELD_NAME = "branch_id";
+    public final static String TAX_RATE_NAME_FIELD_NAME = "name";
+    public final static String TAX_RATE_VALUE_FIELD_NAME = "value";
+    public final static String TAX_RATE_TYPE_FIELD_NAME = "type";
+    public final static String TAX_RATE_STATUS_FIELD_NAME = "status";
 
-    @DatabaseField(id = true, columnName = TAX_RATE_FIELD_NAME)
+    @DatabaseField(id = true, columnName = TAX_RATE_ID_FIELD_NAME)
     int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_RATE_BRANCH_ID_FIELD_NAME)
     String branch_id;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_RATE_NAME_FIELD_NAME)
     String name;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_RATE_VALUE_FIELD_NAME)
     Double value;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_RATE_TYPE_FIELD_NAME)
     int tax_rate_type;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_RATE_STATUS_FIELD_NAME)
     String status;
 
     public Tax_Rates(){ }

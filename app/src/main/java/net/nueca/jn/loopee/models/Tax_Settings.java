@@ -6,12 +6,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Tax_Settings")
 public class Tax_Settings {
 
-    @DatabaseField(generatedId = true, allowGeneratedIdInsert=true)
+    public final static String TAX_SETTINGS_ID_FIELD_NAME = "id";
+    public final static String TAX_SETTINGS_COMPUTE_TAX_FIELD_NAME = "compute_tax";
+    public final static String TAX_SETTINGS_TAX_INCLUSIVE_FIELD_NAME = "tax_inclusive";
+
+    @DatabaseField(generatedId = true, allowGeneratedIdInsert=true, columnName = TAX_SETTINGS_ID_FIELD_NAME)
     int id;
 
+    @DatabaseField(columnName = TAX_SETTINGS_COMPUTE_TAX_FIELD_NAME)
     Boolean compute_tax;
 
-    @DatabaseField
+    @DatabaseField(columnName = TAX_SETTINGS_TAX_INCLUSIVE_FIELD_NAME)
     Boolean tax_inclusive;
 
     public Tax_Settings(){

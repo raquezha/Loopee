@@ -24,12 +24,13 @@ import net.nueca.jn.loopee.models.Tax_Settings;
 import net.nueca.jn.loopee.models.Users;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
 
     // Database Info
     private static final String DATABASE_NAME = "loopee.sqlite";
-    private static final int DATABASE_VERSION = 14;
+    private static final int DATABASE_VERSION = 1;
     // Context
     private Context context;
     // DAO
@@ -43,6 +44,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
     private Dao<Customers, Integer> customersDAO = null;
     private Dao<Tax_Settings, Integer> tax_settingsDAO = null;
 
+    // Queries for Prepared Products Tax Rates
+    private PreparedQuery<Tax_Rates> tax_ratesForProductQuery = null;
+    private PreparedQuery<Products> productsForTax_RatesQuery = null;
 
     // RuntimeExceptionDAO
     private RuntimeExceptionDao sessionRuntimeDao = null;
@@ -73,9 +77,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
             TableUtils.createTable(connectionSource, Tax_Rates.class);
             TableUtils.createTable(connectionSource, Users.class);
             TableUtils.createTable(connectionSource, Products.class);
-            TableUtils.createTable(connectionSource, Product_Tax_Rates.class);
             TableUtils.createTable(connectionSource, Customers.class);
             TableUtils.createTable(connectionSource, Session.class);
+            TableUtils.createTable(connectionSource, Product_Tax_Rates.class);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,8 +100,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
             TableUtils.dropTable(connectionSource, Tax_Settings.class, true);
             TableUtils.dropTable(connectionSource, Users.class, true);
             TableUtils.dropTable(connectionSource, Products.class, true);
-            TableUtils.dropTable(connectionSource, Product_Tax_Rates.class, true);
             TableUtils.dropTable(connectionSource, Customers.class, true);
+            TableUtils.dropTable(connectionSource, Product_Tax_Rates.class, true);
 
             // Create it again by calling onCreate
             onCreate(db, connectionSource);
@@ -274,16 +278,57 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
         return customersRuntimeDao;
     }
 
+    /*
+	 * Convenience methods to build and run our prepared queries.
+	 */
+    private List<Tax_Rates> lookupTax_RatesForProducts(Products products) throws SQLException {
+        if (tax_ratesForProductQuery == null) {
+            tax_ratesForProductQuery = makeTaxRatesForUserProducts();
+        }
+        tax_ratesForProductQuery.setArgumentHolderValue(0, products);
+        return productsRuntimeDao.query(tax_ratesForProductQuery);
+    }
+
+    private List<Products> lookupUsersForPost(Tax_Rates tax_rates) throws SQLException {
+        if (productsForTax_RatesQuery == null) {
+            productsForTax_RatesQuery = makeProductsForTaxRatesQuery();
+        }
+        productsForTax_RatesQuery.setArgumentHolderValue(0, tax_rates);
+        return taxRatesDAORuntimeDao.query(productsForTax_RatesQuery);
+    }
+
+    /**
+     * Build our query for Tax Rates objects that match a Product.
+     */
+    private PreparedQuery<Tax_Rates> makeTaxRatesForUserProducts() throws SQLException {
+        // build our inner query for ProductTax_Rates objects
+        QueryBuilder<Product_Tax_Rates, Integer> productTax_RateQb = productTax_RatesRuntimeDAO.queryBuilder();
+
+        // just select the tax_rate-id field
+        productTax_RateQb.selectColumns(Product_Tax_Rates.TAX_RATE_ID_FIELD_NAME);
+
+        SelectArg userSelectArg = new SelectArg();
+
+        // you could also just pass in user1 here
+        productTax_RateQb.where().eq(Product_Tax_Rates.PRODUCT_ID_FIELD_NAME, userSelectArg);
+
+        // build our outer query for Tax Rates objects
+        QueryBuilder<Tax_Rates, Integer> postQb = taxRatesDAORuntimeDao.queryBuilder();
+
+        // where the id matches in the post-id from the inner query
+        postQb.where().in(Products.PRODUCT_ID_FIELD_NAME, productTax_RateQb);
+        return postQb.prepare();
+    }
+
     /**
      * Build our query for Product objects that match a Tax Rates
      */
 
-
-    private PreparedQuery<Products> makeUsersForPostQuery() throws SQLException {
+    private PreparedQuery<Products> makeProductsForTaxRatesQuery() throws SQLException {
 
         QueryBuilder<Product_Tax_Rates, Integer> productTax_RateQb = productTax_RatesRuntimeDAO.queryBuilder();
 
-        // this time selecting for the user-id field
+        // this time selecting for the product-id field
         productTax_RateQb.selectColumns(Product_Tax_Rates.PRODUCT_ID_FIELD_NAME);
 
         SelectArg postSelectArg = new SelectArg();
@@ -293,8 +338,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
         // build our outer query
         QueryBuilder<Products, Integer> userQb = productTax_RatesRuntimeDAO.queryBuilder();
 
-        // where the user-id matches the inner query's user-id field
-        userQb.where().in(Tax_Rates.TAX_RATE_FIELD_NAME, productTax_RateQb);
+        // where the product-id matches the inner query's tax_rates-id field
+        userQb.where().in(Tax_Rates.TAX_RATE_ID_FIELD_NAME, productTax_RateQb);
         return userQb.prepare();
     }
 

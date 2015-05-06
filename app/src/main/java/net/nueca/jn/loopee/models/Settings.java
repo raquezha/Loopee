@@ -6,13 +6,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Settings")
 public class Settings {
 
-    @DatabaseField(generatedId = true)
+    public final static String SETTINGS_ID_FIELD_NAME = "id";
+    public final static String SETTINGS_NAME_FIELD_NAME = "name";
+    public final static String SETTINGS_VALUE_FIELD_NAME = "value";
+
+    @DatabaseField(generatedId = true, columnName = SETTINGS_ID_FIELD_NAME)
     int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = SETTINGS_NAME_FIELD_NAME)
     String name;
 
-    @DatabaseField
+    @DatabaseField(columnName = SETTINGS_VALUE_FIELD_NAME)
     String value;
 
     public Settings(){}

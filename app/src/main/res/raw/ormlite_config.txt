@@ -1,5 +1,5 @@
 #
-# generated on 2015/05/06 05:50:02
+# generated on 2015/05/07 03:42:16
 #
 # --table-start--
 dataClass=net.nueca.jn.loopee.models.Session
@@ -7,61 +7,80 @@ tableName=Session
 # --table-fields-start--
 # --field-start--
 fieldName=email
+columnName=email
 id=true
 # --field-end--
 # --field-start--
 fieldName=account_id
+columnName=account_id
 # --field-end--
 # --field-start--
 fieldName=password
+columnName=password
 # --field-end--
 # --field-start--
 fieldName=url
+columnName=url
 # --field-end--
 # --field-start--
 fieldName=token
+columnName=token
 # --field-end--
 # --field-start--
 fieldName=productPage
+columnName=product_page
 # --field-end--
 # --field-start--
 fieldName=product_count
+columnName=product_count
 # --field-end--
 # --field-start--
 fieldName=branches_count
+columnName=branches_count
 # --field-end--
 # --field-start--
 fieldName=branches_page
+columnName=branches_page
 # --field-end--
 # --field-start--
 fieldName=customers_count
+columnName=customers_count
 # --field-end--
 # --field-start--
 fieldName=customers_page
+columnName=customers_page
 # --field-end--
 # --field-start--
 fieldName=user_Count
+columnName=user_count
 # --field-end--
 # --field-start--
 fieldName=settings_count
+columnName=settings_count
 # --field-end--
 # --field-start--
 fieldName=role_code
+columnName=role_code
 # --field-end--
 # --field-start--
 fieldName=role_id
+columnName=role_id
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
+columnName=utc_created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
+columnName=utc_updated_at
 # --field-end--
 # --field-start--
 fieldName=home_branch_id
+columnName=home_branch_id
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -72,13 +91,16 @@ tableName=Settings
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=id
 generatedId=true
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=value
+columnName=value
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -89,56 +111,56 @@ tableName=Branch
 # --table-fields-start--
 # --field-start--
 fieldName=id
-columnName=branch_id
+columnName=id
 id=true
 # --field-end--
 # --field-start--
 fieldName=name
-columnName=branch_name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=street
-columnName=branch_street
+columnName=street
 # --field-end--
 # --field-start--
 fieldName=city
-columnName=branch_city
+columnName=city
 # --field-end--
 # --field-start--
 fieldName=state
-columnName=branch_state
+columnName=state
 # --field-end--
 # --field-start--
 fieldName=country
-columnName=branch_country
+columnName=country
 # --field-end--
 # --field-start--
 fieldName=zipcode
-columnName=branch_zip
+columnName=zip
 # --field-end--
 # --field-start--
 fieldName=tin
-columnName=branch_tin
+columnName=tin
 # --field-end--
 # --field-start--
 fieldName=site_type
-columnName=branch_site_type
+columnName=site_type
 # --field-end--
 # --field-start--
 fieldName=subscription_type
-columnName=branch_subscription_type
+columnName=subscription_type
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
-columnName=branch_created_at
+columnName=created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
-columnName=branch_updated_at
+columnName=updated_at
 # --field-end--
 # --field-start--
 fieldName=status
-columnName=branch_status
+columnName=status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -149,11 +171,17 @@ tableName=Tax_Settings
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=id
 generatedId=true
 allowGeneratedIdInsert=true
 # --field-end--
 # --field-start--
+fieldName=compute_tax
+columnName=compute_tax
+# --field-end--
+# --field-start--
 fieldName=tax_inclusive
+columnName=tax_inclusive
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -164,23 +192,28 @@ tableName=Tax_Rates
 # --table-fields-start--
 # --field-start--
 fieldName=id
-columnName=tax_rate_id
+columnName=id
 id=true
 # --field-end--
 # --field-start--
 fieldName=branch_id
+columnName=branch_id
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=value
+columnName=value
 # --field-end--
 # --field-start--
 fieldName=tax_rate_type
+columnName=type
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -191,28 +224,36 @@ tableName=Users
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=id
 id=true
 # --field-end--
 # --field-start--
 fieldName=email
+columnName=email
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=home_branch_id
+columnName=home_branch
 # --field-end--
 # --field-start--
 fieldName=role_code
+columnName=role_code
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
+columnName=utc_created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
+columnName=utc_updated_at
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -223,58 +264,192 @@ tableName=Products
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=id
 id=true
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=stock_no
+columnName=stock_no
 # --field-end--
 # --field-start--
 fieldName=cost
+columnName=cost
 # --field-end--
 # --field-start--
 fieldName=retail_price
+columnName=retail_price
 # --field-end--
 # --field-start--
 fieldName=wholesale_price
+columnName=wholesale_price
 # --field-end--
 # --field-start--
 fieldName=description
+columnName=product_description
 # --field-end--
 # --field-start--
 fieldName=allow_decimal_quantities
+columnName=allow_decimal_quantities
 # --field-end--
 # --field-start--
 fieldName=disable_discount
+columnName=disable_discount
 # --field-end--
 # --field-start--
 fieldName=disable_inventory
+columnName=inventory
 # --field-end--
 # --field-start--
 fieldName=enable_open_price
+columnName=enable
 # --field-end--
 # --field-start--
 fieldName=tax_exempt
+columnName=tax_excempt
 # --field-end--
 # --field-start--
 fieldName=tag_list
+columnName=tag_list
 # --field-end--
 # --field-start--
 fieldName=barcode_list
+columnName=barcode_list
 # --field-end--
 # --field-start--
 fieldName=thumbnail_url
+columnName=thumbnail_url
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
+columnName=utc_created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
+columnName=utc_updated_at
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=status
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=net.nueca.jn.loopee.models.Customers
+tableName=Customers
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=id
+id=true
+# --field-end--
+# --field-start--
+fieldName=code
+columnName=code
+# --field-end--
+# --field-start--
+fieldName=alternate_code
+columnName=alternate_code
+# --field-end--
+# --field-start--
+fieldName=first_name
+columnName=first_name
+# --field-end--
+# --field-start--
+fieldName=last_name
+columnName=last_name
+# --field-end--
+# --field-start--
+fieldName=name
+columnName=name
+# --field-end--
+# --field-start--
+fieldName=company_name
+columnName=company_name
+# --field-end--
+# --field-start--
+fieldName=tin
+columnName=tin
+# --field-end--
+# --field-start--
+fieldName=tax_excempt
+columnName=tax_excempt
+# --field-end--
+# --field-start--
+fieldName=street
+columnName=street
+# --field-end--
+# --field-start--
+fieldName=city
+columnName=city
+# --field-end--
+# --field-start--
+fieldName=state
+columnName=state
+# --field-end--
+# --field-start--
+fieldName=zipcode
+columnName=zipcode
+# --field-end--
+# --field-start--
+fieldName=country
+columnName=country
+# --field-end--
+# --field-start--
+fieldName=telephone
+columnName=telephone
+# --field-end--
+# --field-start--
+fieldName=fax
+columnName=fax
+# --field-end--
+# --field-start--
+fieldName=mobile
+columnName=mobile
+# --field-end--
+# --field-start--
+fieldName=email
+columnName=email
+# --field-end--
+# --field-start--
+fieldName=remark
+columnName=remark
+# --field-end--
+# --field-start--
+fieldName=customer_type
+columnName=type
+# --field-end--
+# --field-start--
+fieldName=customer_type_name
+columnName=type_name
+# --field-end--
+# --field-start--
+fieldName=discount_text
+columnName=discount_text
+# --field-end--
+# --field-start--
+fieldName=available_points
+columnName=available_points
+# --field-end--
+# --field-start--
+fieldName=birthdate
+columnName=birthdate
+# --field-end--
+# --field-start--
+fieldName=utc_created_at
+columnName=utc_created_at
+# --field-end--
+# --field-start--
+fieldName=utc_updated_at
+columnName=utc_updated_at
+# --field-end--
+# --field-start--
+fieldName=status
+columnName=status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -296,122 +471,6 @@ foreign=true
 fieldName=tax_rates
 columnName=post_id
 foreign=true
-# --field-end--
-# --table-fields-end--
-# --table-end--
-#################################
-# --table-start--
-dataClass=net.nueca.jn.loopee.models.Customers
-tableName=Customers
-# --table-fields-start--
-# --field-start--
-fieldName=id
-columnName=customer_id
-id=true
-# --field-end--
-# --field-start--
-fieldName=code
-columnName=customer_code
-# --field-end--
-# --field-start--
-fieldName=alternate_code
-columnName=customer_alternate_code
-# --field-end--
-# --field-start--
-fieldName=first_name
-columnName=customer_first_name
-# --field-end--
-# --field-start--
-fieldName=last_name
-columnName=customer_last_name
-# --field-end--
-# --field-start--
-fieldName=name
-columnName=customer_name
-# --field-end--
-# --field-start--
-fieldName=company_name
-columnName=customer_company_name
-# --field-end--
-# --field-start--
-fieldName=tin
-columnName=customer_tin
-# --field-end--
-# --field-start--
-fieldName=tax_excempt
-columnName=customer_tax_excempt
-# --field-end--
-# --field-start--
-fieldName=street
-columnName=customer_street
-# --field-end--
-# --field-start--
-fieldName=city
-columnName=customer_city
-# --field-end--
-# --field-start--
-fieldName=state
-columnName=customer_state
-# --field-end--
-# --field-start--
-fieldName=zipcode
-columnName=customer_zipcode
-# --field-end--
-# --field-start--
-fieldName=country
-columnName=customer_country
-# --field-end--
-# --field-start--
-fieldName=telephone
-columnName=customer_telephone
-# --field-end--
-# --field-start--
-fieldName=fax
-columnName=customer_fax
-# --field-end--
-# --field-start--
-fieldName=mobile
-columnName=customer_mobile
-# --field-end--
-# --field-start--
-fieldName=email
-columnName=customer_email
-# --field-end--
-# --field-start--
-fieldName=remark
-columnName=customer_remark
-# --field-end--
-# --field-start--
-fieldName=customer_type
-columnName=customer_type
-# --field-end--
-# --field-start--
-fieldName=customer_type_name
-columnName=customer_type_name
-# --field-end--
-# --field-start--
-fieldName=discount_text
-columnName=customer_discount_text
-# --field-end--
-# --field-start--
-fieldName=available_points
-columnName=customer_available_points
-# --field-end--
-# --field-start--
-fieldName=birthdate
-columnName=customer_birthdate
-# --field-end--
-# --field-start--
-fieldName=utc_created_at
-columnName=customer_utc_created_at
-# --field-end--
-# --field-start--
-fieldName=utc_updated_at
-columnName=customer_utc_updated_at
-# --field-end--
-# --field-start--
-fieldName=status
-columnName=customer_status
 # --field-end--
 # --table-fields-end--
 # --table-end--

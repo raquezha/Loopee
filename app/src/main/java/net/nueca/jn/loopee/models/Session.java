@@ -8,61 +8,81 @@ import java.util.Date;
 @DatabaseTable(tableName = "Session")
 public class Session {
 
-    @DatabaseField(id = true)
+    public final static String SESSION_EMAIL_FIELD_NAME = "email";
+    public final static String SESSION_ACCOUNT_ID_FIELD_NAME = "account_id";
+    public final static String SESSION_PASSWORD_FIELD_NAME = "password";
+    public final static String SESSION_URL_FIELD_NAME = "url";
+    public final static String SESSION_TOKEN_FIELD_NAME = "token";
+    public final static String SESSION_PRODUCT_PAGE_FIELD_NAME = "product_page";
+    public final static String SESSION_PRODUCT_COUNT_FIELD_NAME = "product_count";
+    public final static String SESSION_BRANCHES_COUNT_FIELD_NAME = "branches_count";
+    public final static String SESSION_BRANCHES_PAGE_FIELD_NAME = "branches_page";
+    public final static String SESSION_CUSTOMERS_COUNT_FIELD_NAME = "customers_count";
+    public final static String SESSION_CUSTOMERS_PAGE_FIELD_NAME = "customers_page";
+    public final static String SESSION_USER_COUNT_FIELD_NAME = "user_count";
+    public final static String SESSION_SETTINGS_COUNT_FIELD_NAME = "settings_count";
+    public final static String SESSION_ROLE_CODE_FIELD_NAME = "role_code";
+    public final static String SESSION_ROLE_ID_FIELD_NAME = "role_id";
+    public final static String SESSION_UTC_UPDATED_AT_FIELD_NAME = "utc_updated_at";
+    public final static String SESSION_UTC_CREATED_AT_FIELD_NAME = "utc_created_at";
+    public final static String SESSION_HOME_BRANCH_ID_FIELD_NAME = "home_branch_id";
+    public final static String SESSION_STATUS_FIELD_NAME = "status";
+
+    @DatabaseField(id = true, columnName = SESSION_EMAIL_FIELD_NAME)
     String email;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_ACCOUNT_ID_FIELD_NAME)
     String account_id;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_PASSWORD_FIELD_NAME)
     String password;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_URL_FIELD_NAME)
     String url;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_TOKEN_FIELD_NAME)
     String token;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_PRODUCT_PAGE_FIELD_NAME)
     int productPage;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_PRODUCT_COUNT_FIELD_NAME)
     int product_count;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_BRANCHES_COUNT_FIELD_NAME)
     int branches_count;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_BRANCHES_PAGE_FIELD_NAME)
     int branches_page;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_CUSTOMERS_COUNT_FIELD_NAME)
     int customers_count;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_CUSTOMERS_PAGE_FIELD_NAME)
     int customers_page;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_USER_COUNT_FIELD_NAME)
     int user_Count;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_SETTINGS_COUNT_FIELD_NAME)
     int settings_count;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_ROLE_CODE_FIELD_NAME)
     String role_code;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_ROLE_ID_FIELD_NAME)
     String role_id;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_UTC_CREATED_AT_FIELD_NAME)
     Date utc_created_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_UTC_UPDATED_AT_FIELD_NAME)
     Date utc_updated_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_HOME_BRANCH_ID_FIELD_NAME)
     int home_branch_id;
 
-    @DatabaseField
+    @DatabaseField(columnName = SESSION_STATUS_FIELD_NAME)
     String status;
 
     public Session(){
