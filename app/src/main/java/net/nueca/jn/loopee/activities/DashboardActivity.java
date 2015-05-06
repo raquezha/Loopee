@@ -13,6 +13,7 @@ import com.j256.ormlite.stmt.DeleteBuilder;
 import net.nueca.jn.loopee.database.DatabaseManager;
 import net.nueca.jn.loopee.models.Branches;
 import net.nueca.jn.loopee.models.Customers;
+import net.nueca.jn.loopee.models.Product_Tax_Rates;
 import net.nueca.jn.loopee.models.Products;
 import net.nueca.jn.loopee.models.Session;
 import net.nueca.jn.loopee.models.Settings;
@@ -51,35 +52,15 @@ public class DashboardActivity extends Activity implements View.OnClickListener{
             button_begin.setOnClickListener(this);
             button_unlink_device.setOnClickListener(this);
 
-/*
             List<Customers> customers = DatabaseManager.getInstance().getAllCustomers();
             Log.i("customer size: ", String.valueOf(customers.size()));
-*/
 
             List<Products> product = DatabaseManager.getInstance().getAllProducts();
             Log.i("products size: ", String.valueOf(product.size()));
 
-            Products productObj;
+            List<Product_Tax_Rates> product_tax_rates = DatabaseManager.getInstance().getAllProductTaxRates();
+            Log.i("producttaxratessize: ", String.valueOf(product_tax_rates.size()));
 
-/*            for(int i=0; i<product.size(); i++){
-                productObj = product.get(i);
-
-
-           Log.i("product", String.valueOf(productObj.getProduct_tax_rates().size()));
-
-                if(productObj != null) {
-                    for(int x=0; x<productObj.getProduct_tax_rates().size(); x++) {
-
-                        productObj.getProduct_tax_rates().iterator();
-                        //Log.i("product", productObj.toString());
-                    }
-                }
-                else
-                    Log.i("product", "products is null");
-
-            }*/
-
-/*
             List<Tax_Settings> tax_settings = DatabaseManager.getInstance().getAllTax_Settings();
             Log.i("tax_settings size: ", String.valueOf(tax_settings.size()));
 
@@ -96,7 +77,7 @@ public class DashboardActivity extends Activity implements View.OnClickListener{
             Log.i("users size: ", String.valueOf(users.size()));
 
             List<Settings> settings = DatabaseManager.getInstance().getAllSettings();
-            Log.i("settings size: ", String.valueOf(settings.size()));*/
+            Log.i("settings size: ", String.valueOf(settings.size()));
         }
 
     }

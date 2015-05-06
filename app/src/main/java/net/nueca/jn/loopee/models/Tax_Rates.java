@@ -6,7 +6,9 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Tax_Rates")
 public class Tax_Rates {
 
-    @DatabaseField(id = true)
+    public final static String TAX_RATE_FIELD_NAME = "tax_rate_id";
+
+    @DatabaseField(id = true, columnName = TAX_RATE_FIELD_NAME)
     int id;
 
     @DatabaseField

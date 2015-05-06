@@ -6,6 +6,17 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Products")
 public class Products {
 
+    public final static String PRODUCT_ID_FIELD_NAME = "product_id";
+    public final static String PRODUCT_NAME_FIELD_NAME = "product_id";
+    public final static String PRODUCT_STOCK_NO_FIELD_NAME = "product_id";
+    public final static String PRODUCT_COST_FIELD_NAME = "product_id";
+    public final static String PRODUCT_RETAIL_PRICE_FIELD_NAME = "product_id";
+    public final static String PRODUCT_WHOLESALE_PRICE_FIELD_NAME = "product_id";
+    public final static String PRODUCT_DESCRIPTION_FIELD_NAME = "product_id";
+    public final static String PRODUCT_DISABLE_DISCOUNT_FIELD_NAME = "product_id";
+    public final static String PRODUCT_DISABLE_INVENTORY_FIELD_NAME = "product_id";
+    public final static String PRODUCT_ENABLE_FIELD_NAME = "product_id";
+
     @DatabaseField(id = true)
     int id;
 
@@ -52,9 +63,6 @@ public class Products {
     String thumbnail_url;
 
     @DatabaseField
-    String branch_prices;
-
-    @DatabaseField
     String utc_created_at;
 
     @DatabaseField
@@ -73,7 +81,7 @@ public class Products {
         this.retail_price = retail_price;
     }
 
-    public Products(int id, String name, String stock_no, double cost, double retail_price, double wholesale_price, String description, Boolean allow_decimal_quantities, Boolean disable_discount, Boolean disable_inventory, Boolean enable_open_price, Boolean tax_exempt, String tag_list, String barcode_list, String thumbnail_url, String branch_prices, String utc_created_at, String utc_updated_at, String status) {
+    public Products(int id, String name, String stock_no, double cost, double retail_price, double wholesale_price, String description, Boolean allow_decimal_quantities, Boolean disable_discount, Boolean disable_inventory, Boolean enable_open_price, Boolean tax_exempt, String tag_list, String barcode_list, String thumbnail_url, String utc_created_at, String utc_updated_at, String status) {
         this.id = id;
         this.name = name;
         this.stock_no = stock_no;
@@ -89,7 +97,6 @@ public class Products {
         this.tag_list = tag_list;
         this.barcode_list = barcode_list;
         this.thumbnail_url = thumbnail_url;
-        this.branch_prices = branch_prices;
         this.utc_created_at = utc_created_at;
         this.utc_updated_at = utc_updated_at;
         this.status = status;
@@ -113,7 +120,6 @@ public class Products {
                 ", tag_list='" + tag_list + '\'' +
                 ", barcode_list='" + barcode_list + '\'' +
                 ", thumbnail_url='" + thumbnail_url + '\'' +
-                ", branch_prices='" + branch_prices + '\'' +
                 ", utc_created_at='" + utc_created_at + '\'' +
                 ", utc_updated_at='" + utc_updated_at + '\'' +
                 ", status='" + status + '\'' +
@@ -238,14 +244,6 @@ public class Products {
 
     public void setThumbnail_url(String thumbnail_url) {
         this.thumbnail_url = thumbnail_url;
-    }
-
-    public String getBranch_prices() {
-        return branch_prices;
-    }
-
-    public void setBranch_prices(String branch_prices) {
-        this.branch_prices = branch_prices;
     }
 
     public String getUtc_created_at() {

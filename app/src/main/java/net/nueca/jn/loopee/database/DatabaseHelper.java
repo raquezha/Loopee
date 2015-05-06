@@ -6,6 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.SelectArg;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
@@ -26,7 +29,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
 
     // Database Info
     private static final String DATABASE_NAME = "loopee.sqlite";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 14;
     // Context
     private Context context;
     // DAO
@@ -70,6 +73,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
             TableUtils.createTable(connectionSource, Tax_Rates.class);
             TableUtils.createTable(connectionSource, Users.class);
             TableUtils.createTable(connectionSource, Products.class);
+            TableUtils.createTable(connectionSource, Product_Tax_Rates.class);
             TableUtils.createTable(connectionSource, Customers.class);
             TableUtils.createTable(connectionSource, Session.class);
 
@@ -92,6 +96,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
             TableUtils.dropTable(connectionSource, Tax_Settings.class, true);
             TableUtils.dropTable(connectionSource, Users.class, true);
             TableUtils.dropTable(connectionSource, Products.class, true);
+            TableUtils.dropTable(connectionSource, Product_Tax_Rates.class, true);
             TableUtils.dropTable(connectionSource, Customers.class, true);
 
             // Create it again by calling onCreate
@@ -232,6 +237,23 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
         return productsRuntimeDao;
     }
 
+    // Products Tax Rates Dao
+    public Dao<Product_Tax_Rates, Integer> getProductTax_RatesDAO() throws SQLException {
+        if(productTax_RatesDAO == null){
+            productTax_RatesDAO = getDao(Product_Tax_Rates.class);
+        }
+
+        return productTax_RatesDAO;
+    }
+
+    // Products Tax Rates Run Time Excemption Dao
+    public RuntimeExceptionDao<Product_Tax_Rates, Integer> getRuntimeProductTaxRateExcemptionDao(){
+        if(productTax_RatesRuntimeDAO == null) {
+            productTax_RatesRuntimeDAO = getRuntimeExceptionDao(Product_Tax_Rates.class);
+        }
+
+        return productTax_RatesRuntimeDAO;
+    }
 
 
     // Customers Dao
@@ -251,5 +273,32 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
 
         return customersRuntimeDao;
     }
+
+    /**
+     * Build our query for Product objects that match a Tax Rates
+     */
+
+
+    private PreparedQuery<Products> makeUsersForPostQuery() throws SQLException {
+
+        QueryBuilder<Product_Tax_Rates, Integer> productTax_RateQb = productTax_RatesRuntimeDAO.queryBuilder();
+
+        // this time selecting for the user-id field
+        productTax_RateQb.selectColumns(Product_Tax_Rates.PRODUCT_ID_FIELD_NAME);
+
+        SelectArg postSelectArg = new SelectArg();
+
+        productTax_RateQb.where().eq(Product_Tax_Rates.TAX_RATE_ID_FIELD_NAME, postSelectArg);
+
+        // build our outer query
+        QueryBuilder<Products, Integer> userQb = productTax_RatesRuntimeDAO.queryBuilder();
+
+        // where the user-id matches the inner query's user-id field
+        userQb.where().in(Tax_Rates.TAX_RATE_FIELD_NAME, productTax_RateQb);
+        return userQb.prepare();
+    }
+
 }
+
+
 

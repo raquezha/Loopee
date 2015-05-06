@@ -1,5 +1,5 @@
 #
-# generated on 2015/05/06 11:03:59
+# generated on 2015/05/06 05:50:02
 #
 # --table-start--
 dataClass=net.nueca.jn.loopee.models.Session
@@ -89,43 +89,56 @@ tableName=Branch
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=branch_id
 id=true
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=branch_name
 # --field-end--
 # --field-start--
 fieldName=street
+columnName=branch_street
 # --field-end--
 # --field-start--
 fieldName=city
+columnName=branch_city
 # --field-end--
 # --field-start--
 fieldName=state
+columnName=branch_state
 # --field-end--
 # --field-start--
 fieldName=country
+columnName=branch_country
 # --field-end--
 # --field-start--
 fieldName=zipcode
+columnName=branch_zip
 # --field-end--
 # --field-start--
 fieldName=tin
+columnName=branch_tin
 # --field-end--
 # --field-start--
 fieldName=site_type
+columnName=branch_site_type
 # --field-end--
 # --field-start--
 fieldName=subscription_type
+columnName=branch_subscription_type
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
+columnName=branch_created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
+columnName=branch_updated_at
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=branch_status
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -151,6 +164,7 @@ tableName=Tax_Rates
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=tax_rate_id
 id=true
 # --field-end--
 # --field-start--
@@ -254,9 +268,6 @@ fieldName=barcode_list
 fieldName=thumbnail_url
 # --field-end--
 # --field-start--
-fieldName=branch_prices
-# --field-end--
-# --field-start--
 fieldName=utc_created_at
 # --field-end--
 # --field-start--
@@ -269,90 +280,138 @@ fieldName=status
 # --table-end--
 #################################
 # --table-start--
+dataClass=net.nueca.jn.loopee.models.Product_Tax_Rates
+tableName=Product_Tax_Rates
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=products
+columnName=user_id
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=tax_rates
+columnName=post_id
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
 dataClass=net.nueca.jn.loopee.models.Customers
 tableName=Customers
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=customer_id
 id=true
 # --field-end--
 # --field-start--
 fieldName=code
+columnName=customer_code
 # --field-end--
 # --field-start--
 fieldName=alternate_code
+columnName=customer_alternate_code
 # --field-end--
 # --field-start--
 fieldName=first_name
+columnName=customer_first_name
 # --field-end--
 # --field-start--
 fieldName=last_name
+columnName=customer_last_name
 # --field-end--
 # --field-start--
 fieldName=name
+columnName=customer_name
 # --field-end--
 # --field-start--
 fieldName=company_name
+columnName=customer_company_name
 # --field-end--
 # --field-start--
 fieldName=tin
+columnName=customer_tin
 # --field-end--
 # --field-start--
 fieldName=tax_excempt
+columnName=customer_tax_excempt
 # --field-end--
 # --field-start--
 fieldName=street
+columnName=customer_street
 # --field-end--
 # --field-start--
 fieldName=city
+columnName=customer_city
 # --field-end--
 # --field-start--
 fieldName=state
+columnName=customer_state
 # --field-end--
 # --field-start--
 fieldName=zipcode
+columnName=customer_zipcode
 # --field-end--
 # --field-start--
 fieldName=country
+columnName=customer_country
 # --field-end--
 # --field-start--
 fieldName=telephone
+columnName=customer_telephone
 # --field-end--
 # --field-start--
 fieldName=fax
+columnName=customer_fax
 # --field-end--
 # --field-start--
 fieldName=mobile
+columnName=customer_mobile
 # --field-end--
 # --field-start--
 fieldName=email
+columnName=customer_email
 # --field-end--
 # --field-start--
 fieldName=remark
+columnName=customer_remark
 # --field-end--
 # --field-start--
 fieldName=customer_type
+columnName=customer_type
 # --field-end--
 # --field-start--
 fieldName=customer_type_name
+columnName=customer_type_name
 # --field-end--
 # --field-start--
 fieldName=discount_text
+columnName=customer_discount_text
 # --field-end--
 # --field-start--
 fieldName=available_points
+columnName=customer_available_points
 # --field-end--
 # --field-start--
 fieldName=birthdate
+columnName=customer_birthdate
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
+columnName=customer_utc_created_at
 # --field-end--
 # --field-start--
 fieldName=utc_updated_at
+columnName=customer_utc_updated_at
 # --field-end--
 # --field-start--
 fieldName=status
+columnName=customer_status
 # --field-end--
 # --table-fields-end--
 # --table-end--

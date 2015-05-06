@@ -6,85 +6,113 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Customers")
 public class Customers {
 
-    @DatabaseField(id = true)
+    public final static String CUSTOMER_ID_FIELD_NAME = "customer_id";
+    public final static String CUSTOMER_CODE_FIELD_NAME = "customer_code";
+    public final static String CUSTOMER_ALTERNATE_CODE_FIELD_NAME = "customer_alternate_code";
+    public final static String CUSTOMER_FIRST_NAME_FIELD_NAME = "customer_first_name";
+    public final static String CUSTOMER_LAST_NAME_FIELD_NAME = "customer_last_name";
+    public final static String CUSTOMER_NAME_FIELD_NAME = "customer_name";
+    public final static String CUSTOMER_COMPANY_NAME_FIELD_NAME = "customer_company_name";
+    public final static String CUSTOMER_TIN_FIELD_NAME = "customer_tin";
+    public final static String CUSTOMER_TAX_EXCEMPT_FIELD_NAME = "customer_tax_excempt";
+    public final static String CUSTOMER_STREET_FIELD_NAME = "customer_street";
+    public final static String CUSTOMER_CITY_FIELD_NAME = "customer_city";
+    public final static String CUSTOMER_STATE_FIELD_NAME = "customer_state";
+    public final static String CUSTOMER_ZIPCODE_FIELD_NAME = "customer_zipcode";
+    public final static String CUSTOMER_COUNTRY_FIELD_NAME = "customer_country";
+    public final static String CUSTOMER_TELEPHONE_FIELD_NAME = "customer_telephone";
+    public final static String CUSTOMER_FAX_FIELD_NAME = "customer_fax";
+    public final static String CUSTOMER_MOBILE_FIELD_NAME = "customer_mobile";
+    public final static String CUSTOMER_EMAIL_FIELD_NAME = "customer_email";
+    public final static String CUSTOMER_REMARK_FIELD_NAME = "customer_remark";
+    public final static String CUSTOMER_CUSTOMER_TYPE_FIELD_NAME = "customer_type";
+    public final static String CUSTOMER_CUSTOMER_TYPE_NAME_FIELD_NAME = "customer_type_name";
+    public final static String CUSTOMER_DISCOUNT_TEXT_FIELD_NAME = "customer_discount_text";
+    public final static String CUSTOMER_AVAILABLE_POINTS_FIELD_NAME = "customer_available_points";
+    public final static String CUSTOMER_BIRTHDATE_FIELD_NAME = "customer_birthdate";
+    public final static String CUSTOMER_UTC_CREATED_AT_FIELD_NAME = "customer_utc_created_at";
+    public final static String CUSTOMER_UTC_UPDATED_AT_FIELD_NAME = "customer_utc_updated_at";
+    public final static String CUSTOMER_STATUS_FIELD_NAME = "customer_status";
+
+    @DatabaseField(id = true, columnName = CUSTOMER_ID_FIELD_NAME)
     int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_CODE_FIELD_NAME)
     String code;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_ALTERNATE_CODE_FIELD_NAME)
     String alternate_code;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_FIRST_NAME_FIELD_NAME)
     String first_name;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_LAST_NAME_FIELD_NAME)
     String last_name;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_NAME_FIELD_NAME)
     String name;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_COMPANY_NAME_FIELD_NAME)
     String company_name;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_TIN_FIELD_NAME)
     String tin;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_TAX_EXCEMPT_FIELD_NAME)
     String tax_excempt;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_STREET_FIELD_NAME)
     String street;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_CITY_FIELD_NAME)
     String city;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_STATE_FIELD_NAME)
     String state;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_ZIPCODE_FIELD_NAME)
     String zipcode;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_COUNTRY_FIELD_NAME)
     String country;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_TELEPHONE_FIELD_NAME)
     String telephone;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_FAX_FIELD_NAME)
     String fax;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_MOBILE_FIELD_NAME)
     String mobile;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_EMAIL_FIELD_NAME)
     String email;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_REMARK_FIELD_NAME)
     String remark;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_CUSTOMER_TYPE_FIELD_NAME)
     String customer_type;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_CUSTOMER_TYPE_NAME_FIELD_NAME)
     String customer_type_name;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_DISCOUNT_TEXT_FIELD_NAME)
     String discount_text;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_AVAILABLE_POINTS_FIELD_NAME)
     String available_points;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_BIRTHDATE_FIELD_NAME)
     String birthdate;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_UTC_CREATED_AT_FIELD_NAME)
     String utc_created_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_UTC_UPDATED_AT_FIELD_NAME)
     String utc_updated_at;
 
-    @DatabaseField
+    @DatabaseField(columnName = CUSTOMER_STATUS_FIELD_NAME)
     String status;
 
     public Customers(){ }

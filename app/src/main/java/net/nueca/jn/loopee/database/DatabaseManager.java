@@ -9,6 +9,7 @@ import com.j256.ormlite.stmt.DeleteBuilder;
 
 import net.nueca.jn.loopee.models.Branches;
 import net.nueca.jn.loopee.models.Customers;
+import net.nueca.jn.loopee.models.Product_Tax_Rates;
 import net.nueca.jn.loopee.models.Products;
 import net.nueca.jn.loopee.models.Session;
 import net.nueca.jn.loopee.models.Settings;
@@ -73,6 +74,10 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         getHelper().getCustomersRuntimeExcemptionDao().create(customers);
     }
 
+    public void addProductTax_Rates(Product_Tax_Rates product_tax_rates){
+        getHelper().getRuntimeProductTaxRateExcemptionDao().create(product_tax_rates);
+    }
+
     public Tax_Rates newTax_Rates(){
         Tax_Rates tax_rates = new Tax_Rates();
         getHelper().getTaxRatesRuntimeExcemptionDao().create(tax_rates);
@@ -84,6 +89,17 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         getHelper().getTaxRatesRuntimeExcemptionDao().update(tax_rates);
     }
 
+    public List<Product_Tax_Rates> getAllProductTaxRates(){
+        List<Product_Tax_Rates> product_tax_rates = null;
+
+        try {
+            product_tax_rates = getHelper().getRuntimeProductTaxRateExcemptionDao().queryForAll();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return product_tax_rates;
+    }
 
 
     public List<Session> getAllSession() {

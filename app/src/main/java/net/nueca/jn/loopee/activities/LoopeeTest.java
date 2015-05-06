@@ -338,9 +338,6 @@ public class LoopeeTest extends ActionBarActivity implements View.OnClickListene
                                 productList.getString("barcode_list"),
                                 image_products_url,
 
-                                "", // branch rates
-
-
                                 productList.getString("utc_created_at"),
                                 productList.getString("utc_updated_at"),
                                 productList.getString("status")
