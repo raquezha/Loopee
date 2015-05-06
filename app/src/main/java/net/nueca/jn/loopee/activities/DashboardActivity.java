@@ -61,11 +61,11 @@ public class DashboardActivity extends Activity implements View.OnClickListener{
 
             Products productObj;
 
-            for(int i=0; i<product.size(); i++){
+/*            for(int i=0; i<product.size(); i++){
                 productObj = product.get(i);
 
 
-                Log.i("product", String.valueOf(productObj.getProduct_tax_rates().size()));
+           Log.i("product", String.valueOf(productObj.getProduct_tax_rates().size()));
 
                 if(productObj != null) {
                     for(int x=0; x<productObj.getProduct_tax_rates().size(); x++) {
@@ -77,7 +77,7 @@ public class DashboardActivity extends Activity implements View.OnClickListener{
                 else
                     Log.i("product", "products is null");
 
-            }
+            }*/
 
 /*
             List<Tax_Settings> tax_settings = DatabaseManager.getInstance().getAllTax_Settings();

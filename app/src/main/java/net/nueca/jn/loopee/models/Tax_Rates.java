@@ -24,9 +24,6 @@ public class Tax_Rates {
     @DatabaseField
     String status;
 
-    @DatabaseField(foreign = true, foreignAutoRefresh = true, columnName = "product_id", canBeNull = true)
-    private Products product;
-
     public Tax_Rates(){ }
 
     public Tax_Rates(int id, String branch_id, String name, Double value, int tax_rate_type, String status) {
@@ -38,26 +35,15 @@ public class Tax_Rates {
         this.status = status;
     }
 
-    public Tax_Rates(int id, String branch_id, String name, Double value, int tax_rate_type, String status, Products product) {
-        this.id = id;
-        this.branch_id = branch_id;
-        this.name = name;
-        this.value = value;
-        this.tax_rate_type = tax_rate_type;
-        this.status = status;
-        this.product = product;
-    }
-
     @Override
     public String toString() {
         return "Tax_Rates{" +
-                "status='" + status + '\'' +
-                ", id=" + id +
+                "id=" + id +
                 ", branch_id='" + branch_id + '\'' +
                 ", name='" + name + '\'' +
                 ", value=" + value +
                 ", tax_rate_type=" + tax_rate_type +
-                ", product=" + product +
+                ", status='" + status + '\'' +
                 '}';
     }
 
@@ -107,13 +93,5 @@ public class Tax_Rates {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Products getProduct() {
-        return product;
-    }
-
-    public void setProduct(Products product) {
-        this.product = product;
     }
 }

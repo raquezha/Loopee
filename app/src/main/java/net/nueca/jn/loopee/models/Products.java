@@ -1,10 +1,7 @@
 package net.nueca.jn.loopee.models;
 
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
-
-import java.util.Collection;
 
 @DatabaseTable(tableName = "Products")
 public class Products {
@@ -57,9 +54,6 @@ public class Products {
     @DatabaseField
     String branch_prices;
 
-    @ForeignCollectionField(eager = false)
-    Collection<Tax_Rates> product_tax_rates;
-
     @DatabaseField
     String utc_created_at;
 
@@ -69,7 +63,8 @@ public class Products {
     @DatabaseField
     String status;
 
-    public Products() { }
+    public Products() {
+    }
 
     public Products(int id, String name, double cost, double retail_price) {
         this.id = id;
@@ -119,7 +114,6 @@ public class Products {
                 ", barcode_list='" + barcode_list + '\'' +
                 ", thumbnail_url='" + thumbnail_url + '\'' +
                 ", branch_prices='" + branch_prices + '\'' +
-                ", product_tax_rates=" + product_tax_rates +
                 ", utc_created_at='" + utc_created_at + '\'' +
                 ", utc_updated_at='" + utc_updated_at + '\'' +
                 ", status='" + status + '\'' +
@@ -252,14 +246,6 @@ public class Products {
 
     public void setBranch_prices(String branch_prices) {
         this.branch_prices = branch_prices;
-    }
-
-    public Collection<Tax_Rates> getProduct_tax_rates() {
-        return product_tax_rates;
-    }
-
-    public void setProduct_tax_rates(Collection<Tax_Rates> product_tax_rates) {
-        this.product_tax_rates = product_tax_rates;
     }
 
     public String getUtc_created_at() {

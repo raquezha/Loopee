@@ -21,6 +21,11 @@ import java.util.List;
 public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
 
     static private DatabaseManager instance;
+    private DatabaseHelper helper;
+
+    private DatabaseManager(Context ctx) {
+        helper = new DatabaseHelper(ctx);
+    }
 
     static public void init(Context ctx) {
         if (null == instance) {
@@ -30,12 +35,6 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
 
     static public DatabaseManager getInstance() {
         return instance;
-    }
-
-    private DatabaseHelper helper;
-
-    private DatabaseManager(Context ctx) {
-        helper = new DatabaseHelper(ctx);
     }
 
     public DatabaseHelper getHelper() {
@@ -85,13 +84,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         getHelper().getTaxRatesRuntimeExcemptionDao().update(tax_rates);
     }
 
-    public void assignProductsEmptyForeignCollection(Products products){
-        getHelper().getProductRuntimeExcemptionDao().assignEmptyForeignCollection(products, "product_tax_rates");
-    }
 
-    public void addProductsForeignCollection(Products products, Tax_Rates tax_rates){
-        products.getProduct_tax_rates().add(tax_rates);
-    }
 
     public List<Session> getAllSession() {
         List<Session> session = null;

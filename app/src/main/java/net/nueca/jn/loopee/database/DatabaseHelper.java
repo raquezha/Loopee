@@ -8,10 +8,12 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import net.nueca.jn.loopee.models.Products;
+
 import net.nueca.jn.loopee.activities.R;
 import net.nueca.jn.loopee.models.Branches;
 import net.nueca.jn.loopee.models.Customers;
+import net.nueca.jn.loopee.models.Product_Tax_Rates;
+import net.nueca.jn.loopee.models.Products;
 import net.nueca.jn.loopee.models.Session;
 import net.nueca.jn.loopee.models.Settings;
 import net.nueca.jn.loopee.models.Tax_Rates;
@@ -22,14 +24,11 @@ import java.sql.SQLException;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
 
-    // Context
-    private Context context;
-
     // Database Info
     private static final String DATABASE_NAME = "loopee.sqlite";
-    private static final int DATABASE_VERSION = 5;
-
-
+    private static final int DATABASE_VERSION = 8;
+    // Context
+    private Context context;
     // DAO
     private Dao<Session, String> sessionDAO = null;
     private Dao<Settings,Integer> settingsDAO = null;
@@ -37,6 +36,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
     private Dao<Tax_Rates,Integer> taxRatesDAO = null;
     private Dao<Users,Integer> usersDAO = null;
     private Dao<Products,Integer> productsDAO = null;
+    private Dao<Product_Tax_Rates, Integer> productTax_RatesDAO = null;
     private Dao<Customers, Integer> customersDAO = null;
     private Dao<Tax_Settings, Integer> tax_settingsDAO = null;
 
@@ -48,6 +48,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper{
     private RuntimeExceptionDao taxRatesDAORuntimeDao = null;
     private RuntimeExceptionDao usersRuntimeDao = null;
     private RuntimeExceptionDao productsRuntimeDao = null;
+    private RuntimeExceptionDao productTax_RatesRuntimeDAO = null;
     private RuntimeExceptionDao customersRuntimeDao = null;
     private RuntimeExceptionDao taxSettingsRuntimeDao = null;
 
