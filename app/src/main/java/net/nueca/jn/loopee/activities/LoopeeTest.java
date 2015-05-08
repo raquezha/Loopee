@@ -118,7 +118,7 @@ public class LoopeeTest extends ActionBarActivity implements View.OnClickListene
 
     private void doTestProducts() {
         DatabaseHelper dbHelper = OpenHelperManager.getHelper(this, DatabaseHelper.class);
-        RuntimeExceptionDao<Products, Integer> productsDAO = dbHelper.getProductRuntimeExcemptionDao();
+        RuntimeExceptionDao<Products, Integer> productsDAO = dbHelper.getProductRuntimeExceptionDao();
 
         List<Products> products1 = productsDAO.queryForEq("id", 1);
 
@@ -912,9 +912,9 @@ public class LoopeeTest extends ActionBarActivity implements View.OnClickListene
 
 
                 // Get the Dao (In my case its RuntimeExcemptionDao)
-                RuntimeExceptionDao<Products, Integer> productsDao = DatabaseManager.getInstance().getHelper().getProductRuntimeExcemptionDao();
-                RuntimeExceptionDao<Session, String> sessionDao = DatabaseManager.getInstance().getHelper().getSessionRuntimeExcemption();
-                RuntimeExceptionDao<Users, Integer> usersDao = DatabaseManager.getInstance().getHelper().getUsersRuntimeExcemptionDao();
+                RuntimeExceptionDao<Products, Integer> productsDao = DatabaseManager.getInstance().getHelper().getProductRuntimeExceptionDao();
+                RuntimeExceptionDao<Session, String> sessionDao = DatabaseManager.getInstance().getHelper().getSessionRuntimeException();
+                RuntimeExceptionDao<Users, Integer> usersDao = DatabaseManager.getInstance().getHelper().getUsersRuntimeExceptionDao();
 
                 // Get the Deleted Builder of Products
                 DeleteBuilder<Products, Integer> productsDeleteBuilder = productsDao.deleteBuilder();

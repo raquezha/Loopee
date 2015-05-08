@@ -9,6 +9,7 @@ import com.j256.ormlite.stmt.DeleteBuilder;
 
 import net.nueca.jn.loopee.models.Branches;
 import net.nueca.jn.loopee.models.Customers;
+import net.nueca.jn.loopee.models.Product_Branch_Prices;
 import net.nueca.jn.loopee.models.Product_Tax_Rates;
 import net.nueca.jn.loopee.models.Products;
 import net.nueca.jn.loopee.models.Session;
@@ -43,57 +44,60 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
     }
 
     public void addProduct(Products product) {
-        getHelper().getProductRuntimeExcemptionDao().create(product);
+        getHelper().getProductRuntimeExceptionDao().create(product);
     }
 
     public void addSession(Session session) {
-        getHelper().getSessionRuntimeExcemption().create(session);
+        getHelper().getSessionRuntimeException().create(session);
     }
 
     public void addUser(Users user) {
-        getHelper().getUsersRuntimeExcemptionDao().create(user);
+        getHelper().getUsersRuntimeExceptionDao().create(user);
     }
 
     public void addSettings(Settings settings){
-        getHelper().getSettingsRuntimeExcemptionDao().create(settings);
+        getHelper().getSettingsRuntimeExceptionDao().create(settings);
     }
 
     public void addBranches(Branches branches){
-        getHelper().getBranchesRunTimeExcemptionDao().create(branches);
+        getHelper().getBranchesRunTimeExceptionDao().create(branches);
     }
 
     public void addTax_Settings(Tax_Settings tax_settings){
-        getHelper().getTaxSettingsRuntimeExcemptionDao().create(tax_settings);
+        getHelper().getTaxSettingsRuntimeExceptionDao().create(tax_settings);
     }
 
     public void addTax_Rates(Tax_Rates tax_rates){
-        getHelper().getTaxRatesRuntimeExcemptionDao().create(tax_rates);
+        getHelper().getTaxRatesRuntimeExceptionDao().create(tax_rates);
     }
 
     public void addCustomers(Customers customers){
-        getHelper().getCustomersRuntimeExcemptionDao().create(customers);
+        getHelper().getCustomersRuntimeExceptionDao().create(customers);
     }
 
     public void addProductTax_Rates(Product_Tax_Rates product_tax_rates){
-        getHelper().getRuntimeProductTaxRateExcemptionDao().create(product_tax_rates);
+        getHelper().getRuntimeProductTaxRateExceptionDao().create(product_tax_rates);
     }
 
+    public void addProductBranch_Prices(Product_Branch_Prices product_branch_prices){
+        getHelper().getProductBranch_PricesRuntimeExceptionDao().create(product_branch_prices);
+    }
     public Tax_Rates newTax_Rates(){
         Tax_Rates tax_rates = new Tax_Rates();
-        getHelper().getTaxRatesRuntimeExcemptionDao().create(tax_rates);
+        getHelper().getTaxRatesRuntimeExceptionDao().create(tax_rates);
 
         return tax_rates;
     }
 
     public void updateTax_Rates(Tax_Rates tax_rates){
-        getHelper().getTaxRatesRuntimeExcemptionDao().update(tax_rates);
+        getHelper().getTaxRatesRuntimeExceptionDao().update(tax_rates);
     }
 
     public List<Product_Tax_Rates> getAllProductTaxRates(){
         List<Product_Tax_Rates> product_tax_rates = null;
 
         try {
-            product_tax_rates = getHelper().getRuntimeProductTaxRateExcemptionDao().queryForAll();
+            product_tax_rates = getHelper().getRuntimeProductTaxRateExceptionDao().queryForAll();
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -105,7 +109,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
     public List<Session> getAllSession() {
         List<Session> session = null;
         try {
-            session = getHelper().getSessionRuntimeExcemption().queryForAll();
+            session = getHelper().getSessionRuntimeException().queryForAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -114,13 +118,13 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
 
     public Tax_Rates queryTax_RatesWithId(int id){
 
-        Tax_Rates tax_rates = getHelper().getTaxRatesRuntimeExcemptionDao().queryForId(id);
+        Tax_Rates tax_rates = getHelper().getTaxRatesRuntimeExceptionDao().queryForId(id);
 
         return tax_rates;
     }
 
     public Products queryProductsWithId(int id){
-        Products products = getHelper().getProductRuntimeExcemptionDao().queryForId(id);
+        Products products = getHelper().getProductRuntimeExceptionDao().queryForId(id);
 
         return products;
     }
@@ -128,7 +132,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
 
         List<Products> products;
 
-        products = getHelper().getProductRuntimeExcemptionDao().queryForAll();
+        products = getHelper().getProductRuntimeExceptionDao().queryForAll();
 
         return products;
     }
@@ -136,7 +140,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
     public List<Customers> getAllCustomers(){
         List<Customers> customers = null;
         try {
-            customers = getHelper().getCustomersRuntimeExcemptionDao().queryForAll();
+            customers = getHelper().getCustomersRuntimeExceptionDao().queryForAll();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -146,7 +150,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
     public List<Tax_Settings> getAllTax_Settings(){
         List<Tax_Settings> tax_settings = null;
         try {
-            tax_settings = getHelper().getTaxSettingsRuntimeExcemptionDao().queryForAll();
+            tax_settings = getHelper().getTaxSettingsRuntimeExceptionDao().queryForAll();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -156,7 +160,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
     public List<Tax_Rates> getAllTax_Rates(){
         List<Tax_Rates> tax_rates = null;
         try {
-            tax_rates = getHelper().getTaxRatesRuntimeExcemptionDao().queryForAll();
+            tax_rates = getHelper().getTaxRatesRuntimeExceptionDao().queryForAll();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -166,7 +170,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         List<Branches> branches = null;
 
         try{
-            branches = getHelper().getBranchesRunTimeExcemptionDao().queryForAll();
+            branches = getHelper().getBranchesRunTimeExceptionDao().queryForAll();
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -178,7 +182,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         List<Users> users = null;
 
         try{
-            users = getHelper().getUsersRuntimeExcemptionDao().queryForAll();
+            users = getHelper().getUsersRuntimeExceptionDao().queryForAll();
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -190,7 +194,7 @@ public class DatabaseManager extends OrmLiteBaseActivity<DatabaseHelper> {
         List<Settings> settings = null;
 
         try{
-            settings = getHelper().getSettingsRuntimeExcemptionDao().queryForAll();
+            settings = getHelper().getSettingsRuntimeExceptionDao().queryForAll();
         }catch (SQLException e){
             e.printStackTrace();
         }

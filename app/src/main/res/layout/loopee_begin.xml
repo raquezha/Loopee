@@ -297,7 +297,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/loopee_begin_invoices_unsubmitted"
+                android:id="@+id/loopee_begin_unsubmitted_input"
                 android:text="Test User"
                 android:layout_toRightOf="@+id/loopee_begin_unsubmitted"
                 android:textColor="#ffffff"

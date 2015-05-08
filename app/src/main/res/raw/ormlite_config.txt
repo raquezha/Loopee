@@ -1,5 +1,5 @@
 #
-# generated on 2015/05/07 03:42:16
+# generated on 2015/05/08 05:18:24
 #
 # --table-start--
 dataClass=net.nueca.jn.loopee.models.Session
@@ -65,6 +65,10 @@ columnName=role_code
 # --field-start--
 fieldName=role_id
 columnName=role_id
+# --field-end--
+# --field-start--
+fieldName=name
+columnName=name
 # --field-end--
 # --field-start--
 fieldName=utc_created_at
@@ -214,6 +218,34 @@ columnName=type
 # --field-start--
 fieldName=status
 columnName=status
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=net.nueca.jn.loopee.models.Branch_Prices
+tableName=Branch_Prices
+# --table-fields-start--
+# --field-start--
+fieldName=branch_id
+columnName=id
+id=true
+# --field-end--
+# --field-start--
+fieldName=retail_price
+columnName=retail_price
+# --field-end--
+# --field-start--
+fieldName=wholesale_price
+columnName=wholesale_price
+# --field-end--
+# --field-start--
+fieldName=utc_created_at
+columnName=utc_created_at
+# --field-end--
+# --field-start--
+fieldName=utc_updated_at
+columnName=utc_updated_at
 # --field-end--
 # --table-fields-end--
 # --table-end--
@@ -464,12 +496,33 @@ generatedId=true
 # --field-end--
 # --field-start--
 fieldName=products
-columnName=user_id
+columnName=product_id
 foreign=true
 # --field-end--
 # --field-start--
 fieldName=tax_rates
-columnName=post_id
+columnName=tax_rate_id
+foreign=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=net.nueca.jn.loopee.models.Product_Branch_Prices
+tableName=Product_Branch_Prices
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=products
+columnName=product_id
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=branch_prices
+columnName=branch_prices_id
 foreign=true
 # --field-end--
 # --table-fields-end--

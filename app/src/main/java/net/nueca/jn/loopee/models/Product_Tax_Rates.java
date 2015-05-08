@@ -6,8 +6,8 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Product_Tax_Rates")
 public class Product_Tax_Rates {
 
-    public final static String PRODUCT_ID_FIELD_NAME = "user_id";
-    public final static String TAX_RATE_ID_FIELD_NAME = "post_id";
+    public final static String PRODUCT_ID_FIELD_NAME = "product_id";
+    public final static String TAX_RATE_ID_FIELD_NAME = "tax_rate_id";
 
     @DatabaseField(generatedId = true)
     int id;
@@ -35,7 +35,6 @@ public class Product_Tax_Rates {
                 ", tax_rates=" + tax_rates +
                 '}';
     }
-
 
     public Products getProducts() {
         return products;
