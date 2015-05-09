@@ -34,5 +34,6 @@
     <string name="invalid_email">This email address is invalid</string>
     <string name="invalid_password">The length of Password should be at least 5 characters</string>
     <string name="field_required">This field is required</string>
+    <string name="thumbnail_content_desc">productThumbnail</string>
 
 </resources>

@@ -123,9 +123,12 @@ public class RequestProxy {
 
                         @Override
                         public void onResponse(Bitmap bitmap) {
+                            if(bitmap != null ) {
 
-                            onGetImageSuccess(cachekey, bitmap);
+                                Bitmap bMapScaled = Bitmap.createScaledBitmap(bitmap, 200, 150, true);
 
+                                onGetImageSuccess(cachekey, bMapScaled);
+                            }
                         }
                     }, 0, 0, null,
                             new Response.ErrorListener() {
