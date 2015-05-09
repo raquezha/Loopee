@@ -54,14 +54,15 @@
                 android:id="@+id/login_text_progress"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100px"
+                android:layout_marginTop="100dp"
                 android:layout_alignBottom="@id/login_progress"
                 android:layout_alignLeft="@id/login_progress"
                 android:layout_alignRight="@id/login_progress"
                 android:gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
 
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:textColor="#9b9b9b" />
         </RelativeLayout>
 
         <ScrollView

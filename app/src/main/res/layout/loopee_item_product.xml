@@ -18,7 +18,8 @@
         android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
 
-    <ImageView
+
+    <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/lp_image_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +31,9 @@
         android:contentDescription="productThumbnail"
         android:clickable="false"
         android:minHeight="100dp"
-        android:minWidth="100dp" />
+        android:minWidth="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/lp_text_product_name"

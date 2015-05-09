@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.j256.ormlite.dao.RuntimeExceptionDao;
 import com.j256.ormlite.stmt.DeleteBuilder;
 
+import net.nueca.jn.loopee.controllers.RequestManager;
 import net.nueca.jn.loopee.database.DatabaseManager;
 import net.nueca.jn.loopee.models.Branches;
 import net.nueca.jn.loopee.models.Customers;
@@ -221,6 +222,9 @@ public class DashboardActivity extends Activity implements View.OnClickListener 
                     DatabaseManager.getInstance().deleteTableContents(productsDao, productsDeleteBuilder);
                     DatabaseManager.getInstance().deleteTableContents(customersDao, customersDeleteBuilder);
 
+
+                    // clear the cache
+                    RequestManager.getInstance().doRequest().clearCache();
 
                     finish();
                     startLoginActivity();

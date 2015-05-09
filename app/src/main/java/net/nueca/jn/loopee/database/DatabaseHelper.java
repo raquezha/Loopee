@@ -32,7 +32,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     // Database Info
     private static final String DATABASE_NAME = "loopee.db";
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 13;
     // Context
     private Context context;
     // DAO

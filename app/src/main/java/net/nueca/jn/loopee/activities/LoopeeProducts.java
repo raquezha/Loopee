@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import net.nueca.jn.loopee.adapters.LProductsAdapter;
+import net.nueca.jn.loopee.controllers.RequestManager;
 import net.nueca.jn.loopee.database.DatabaseManager;
 import net.nueca.jn.loopee.models.Products;
 import net.nueca.jn.loopee.models.Session;
@@ -38,7 +39,7 @@ public class LoopeeProducts extends ActionBarActivity {
 
         pRecyclerView = (RecyclerView) findViewById(R.id.lp_recyclerview);
         pLayoutManager = new LinearLayoutManager(this);
-        pAdapter = new LProductsAdapter(this, createMockList(), R.layout.loopee_item_product, sessions);
+        pAdapter = new LProductsAdapter(this, getAllProducts(), R.layout.loopee_item_product, sessions, RequestManager.getInstance().doRequest().getImageLoader());
 
         pRecyclerView.setHasFixedSize(true);
         pRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -107,8 +108,7 @@ public class LoopeeProducts extends ActionBarActivity {
         }
     }
 
-    private List<Products> createMockList() {
-
+    private List<Products> getAllProducts() {
 
         return DatabaseManager.getInstance().getAllProducts();
     }
